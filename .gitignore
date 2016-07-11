@@ -1,0 +1,52 @@
+package pickOne;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class pickOne {
+
+	public static void main(String[] args) {	
+		//variables used
+		String correct = "y";
+		String wrong = "n";
+		int randomInt = 0;
+		
+		//calling in scanners and random number generator
+		Scanner sc = new Scanner(System.in);
+		Random randomGenerator = new Random();
+		
+		//first print that asks for 4 items
+		System.out.println("What are your top four places to eat?" );
+		String itemOne = sc.nextLine();
+		String itemTwo = sc.nextLine();
+		String itemThree = sc.nextLine();
+		String itemFour = sc.nextLine();
+		
+		//correcting items
+		System.out.printf("You Chose %s, %s, %s and %s. Is this correct?(y/n) ", itemOne, itemTwo, itemThree, itemFour);
+		String answer = sc.next();
+		
+		//runing 
+		if (answer.equals(correct)){
+			 for (int idx = 0; idx <= 10; ++idx){
+			      randomInt = randomGenerator.nextInt(4);
+			    }if(randomInt == 0){
+			    	System.out.printf("go to %s", itemOne);
+			    }if(randomInt == 1){
+			    	System.out.printf("go to %s", itemTwo);
+			    }if(randomInt == 2){
+			    	System.out.printf("go to %s", itemThree);
+			    }if(randomInt == 3){
+			    	System.out.printf("go to %s", itemFour);
+			    }if(randomInt == 4){
+			    	System.out.printf("go eat a salad you fat ass");
+			    }
+			
+
+		}else{
+			System.out.printf("okay do over...");
+		}
+		
+	}//end public static void
+
+}//end public class
